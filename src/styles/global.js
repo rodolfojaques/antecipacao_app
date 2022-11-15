@@ -7,10 +7,12 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0px;
         list-style: none;
         box-sizing: border-box;
+
+        font-family: Arial, Helvetica, sans-serif;
         
     }
 
     body{
-        background-color: lightblue;
+        background-color: lightsteelblue;
     }
 `;
