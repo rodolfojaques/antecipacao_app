@@ -4,6 +4,7 @@ import { TextField,Button } from "@mui/material";
 import * as yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
+import { fontWeight } from "@mui/system";
 
 export function Form(){
 
@@ -23,17 +24,80 @@ export function Form(){
         <FormCard onSubmit={handleSubmit(formSchema)}>
             <h2>Simule sua Antecipação</h2>
             {errors?.venda?.message?
-            <TextField error id="venda" label="Informe o valor da venda *" variant="outlined" color="warning" helperText={"É esperado que o valor seja um número"} {...register("venda")}/>
+            <div>
+                <label style={{
+                    color:"red",
+                    fontWeight: "bolder"
+                    }}
+                >
+                    É esperado que o valor de venda seja um número *
+                </label>
+                <input style={{
+                    borderColor:"red"
+                    }}
+                    type={"text"} id="venda" {...register("venda")}
+                />
+            </div>
             :
-            <TextField id="venda" label="Informe o valor da venda *" variant="outlined" {...register("venda")}/>}
+            <div>
+                <label style={{
+                    color:"#4F4F4F",
+                    fontWeight: "bolder"
+                    }}
+                    >Informe o valor da venda *
+                </label>
+                <input type={"text"} id="venda" {...register("venda")}/>
+            </div>}
             {errors?.parcelas?.message?
-            <TextField error id="parcelas" label="Em quantas parcelas *" variant="outlined" color="warning" helperText={"É esperado que o valor seja um número"}{...register("parcelas")}/> 
+            <div>
+                <label style={{
+                    color:"red",
+                    fontWeight: "bolder"
+                    }}
+                >
+                    É esperado que a quantidade de parcelas seja um número *
+                </label>
+                <input style={{
+                    borderColor:"red"
+                    }} 
+                    id="parcelas" {...register("parcelas")}
+                />
+            </div>
             :
-            <TextField id="parcelas" label="Em quantas parcelas *" variant="outlined" {...register("parcelas")}/>}
+            <div>
+                <label style={{
+                    color:"#4F4F4F",
+                    fontWeight: "bolder"
+                    }}
+                    >Em quantas parcelas *
+                </label>
+                <input id="parcelas" {...register("parcelas")}/>
+            </div>}
             {errors?.mdr?.message?
-            <TextField error id="mdr" label="Informe o percentual de MDR *" variant="outlined" color="warning" helperText={"É esperado que o valor seja um número"} {...register("mdr")}/>
+            <div>
+                <label style={{
+                    color:"red",
+                    fontWeight: "bolder"
+                    }}
+                >
+                    É esperado que o percentual de MDR seja um número *
+                </label>
+                <input style={{
+                    borderColor:"red"
+                    }} 
+                    id="mdr" {...register("mdr")}
+                />
+            </div>
             :
-            <TextField id="mdr" label="Informe o percentual de MDR *" variant="outlined" {...register("mdr")} onChange={Form.su}/>}
+            <div>
+                <label style={{
+                    color:"#4F4F4F",
+                    fontWeight: "bolder"
+                    }}
+                    >Informe o percentual de MDR *
+                </label>
+                <input id="mdr" {...register("mdr")}/>
+            </div>}
             <Button type="submit" variant="text">Antecipar</Button>
         </FormCard>
     )
