@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CardAntecip = styled.section`
     width: 100%;
-    height: 27vh;
+    height: 30vh;
 
     background-color: lightcyan;
     color: #4F4F4F;

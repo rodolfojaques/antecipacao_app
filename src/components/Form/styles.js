@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FormCard = styled.form`
     width: 100%;
-    height: 53vh;
+    height: 60vh;
 
     display: flex;
     flex-direction: column;
@@ -34,7 +34,8 @@ export const FormCard = styled.form`
             width: 100%;
             color: black;
             font-weight: bold;
-            border-color: darkgray;
+            border-style: ridge;
+            border-color: lightgray;
             border-radius: 5px;
             
             padding: 0 .3rem 0 .3rem;

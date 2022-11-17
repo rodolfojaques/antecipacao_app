@@ -13,6 +13,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        background-color: lightsteelblue;
+        background-color: azure;
     }
 `;
