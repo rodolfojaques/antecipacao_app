@@ -1,11 +1,15 @@
 import './App.css';
 import { Home } from './pages/home';
+import { CardProvider } from './providers/card';
 
 function App() {
   return (
-    <div className="App">
-      <Home/>
-    </div>
+    <CardProvider>
+      <div className="App">
+        <Home/>
+      </div>      
+    </CardProvider>
+
   );
 }
 
